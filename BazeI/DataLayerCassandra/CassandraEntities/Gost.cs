@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DataLayerCassandra.CassandraEntities
+{
+    public class Gost
+    {
+        public string ime { get; set; }
+        public string prezime { get; set; }
+        public string telefon { get; set; }
+    }
+}

@@ -1,0 +1,5 @@
+C:\Users\38160\source\repos\BazeI\DataLayer\bin\Debug\netstandard2.0\DataLayer.deps.json
+C:\Users\38160\source\repos\BazeI\DataLayer\bin\Debug\netstandard2.0\DataLayer.dll
+C:\Users\38160\source\repos\BazeI\DataLayer\obj\Debug\netstandard2.0\DataLayer.csprojAssemblyReference.cache
+C:\Users\38160\source\repos\BazeI\DataLayer\obj\Debug\netstandard2.0\DataLayer.AssemblyInfoInputs.cache
+C:\Users\38160\source\repos\BazeI\DataLayer\obj\Debug\netstandard2.0\DataLayer.AssemblyInfo.cs

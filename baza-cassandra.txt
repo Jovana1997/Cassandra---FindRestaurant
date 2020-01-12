@@ -1,0 +1,895 @@
+---Ne treba insert---
+CREATE TABLE "Gost" (
+    ime text,
+    prezime text,
+    telefon text,
+    PRIMARY KEY (telefon)
+)
+---Oko 20 gradova---
+CREATE TABLE "Grad" (
+    naziv text,
+    postanskiBroj text,
+    PRIMARY KEY (postanskiBroj)
+)
+---Za svaki grad---
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('1', '18000', 'Ambasador', 'Vozda Karadjordja 1', '10', 'Kineska', 'Da', 'Ne');
+CREATE TABLE "Restoran" (
+    "restoranID" text,
+    postanski text,
+    naziv text,
+    adresa text,
+    brojStolova text,
+    tipKuhinje text,
+    vegan text,
+    bezGlutena text,
+    PRIMARY KEY ("restoranID")
+)
+---Ne treba---
+CREATE TABLE "Rezervacija" (
+    "rezervacijaID" text,
+    vreme time,
+    datum date,
+    brojOsoba text,
+    "restoranID" text,
+    "stoID" text,
+    PRIMARY KEY ("rezervacijaID")
+)
+
+CREATE TABLE "Sto" (
+    "restoranID" text,
+    "stoID" text,
+    kapacitet text,
+    PRIMARY KEY ("restoranID", "stoID")
+)
+
+CREATE TABLE "Jelo" (
+    "restoranID" text,
+    "jeloID" text,
+    naziv text,
+    sastojci text,
+    cena text,
+    PRIMARY KEY ("restoranID", "jeloID")
+)
+
+//gradovi//
+
+insert into "Grad" ( naziv, postanskiBroj)  values ('Nis', '18000');
+insert into "Grad" ( naziv, postanskiBroj)  values ('Beograd', '11000');
+insert into "Grad" ( naziv, postanskiBroj)  values ('Novi Sad', '12000');
+insert into "Grad" ( naziv, postanskiBroj)  values ('Subotica', '13000');
+insert into "Grad" ( naziv, postanskiBroj)  values ('Uzice', '14000');
+insert into "Grad" ( naziv, postanskiBroj)  values ('Negotin', '15000');
+insert into "Grad" ( naziv, postanskiBroj)  values ('Jagodina', '16000');
+insert into "Grad" ( naziv, postanskiBroj)  values ('Cacak', '17000');
+insert into "Grad" ( naziv, postanskiBroj)  values ('Kraljevo', '10000');
+insert into "Grad" ( naziv, postanskiBroj)  values ('Kragujevac', '10500');
+insert into "Grad" ( naziv, postanskiBroj)  values ('Vranje', '11500');
+insert into "Grad" ( naziv, postanskiBroj)  values ('Leskovac', '12500');
+insert into "Grad" ( naziv, postanskiBroj)  values ('Loznica', '13500');
+insert into "Grad" ( naziv, postanskiBroj)  values ('Valjevo', '14500');
+insert into "Grad" ( naziv, postanskiBroj)  values ('Trstenik', '15500');
+insert into "Grad" ( naziv, postanskiBroj)  values ('Cuprija', '16500');
+insert into "Grad" ( naziv, postanskiBroj)  values ('Senta', '17500');
+insert into "Grad" ( naziv, postanskiBroj)  values ('Zajecar', '9000');
+insert into "Grad" ( naziv, postanskiBroj)  values ('Knjazevac', '9500');
+insert into "Grad" ( naziv, postanskiBroj)  values ('Novi Pazar', '8500');
+
+//gradovi//
+
+//restoraniNis//
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('1', '18000', 'Ching Chong', 'Vozda Karadjordja 1', '10', 'Kineska', 'Da', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('2', '18000', 'Tequila', 'Vozda Karadjordja 2', '10', 'Meksicka', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('3', '18000', 'Greek taverna', 'Vozda Karadjordja 3', '10', 'Grcka', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('4', '18000', 'Pasta la Vista', 'Vozda Karadjordja 4', '10', 'Italijanska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('5', '18000', 'Kod brke', 'Vozda Karadjordja 5', '10', 'Srpska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('6', '18000', 'Taco Paradise', 'Vozda Karadjordja 6', '10', 'Meksicka', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('7', '18000', 'Kod kice', 'Vozda Karadjordja 7', '10', 'Srpska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('8', '18000', 'Kafana Zvrk', 'Vozda Karadjordja 8', '10', 'Srpska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('9', '18000', 'Polumesec', 'Vozda Karadjordja 9', '10', 'Srpska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('10', '18000', 'Naruto', 'Vozda Karadjordja 10', '10', 'Japanska', 'Da', 'Da');
+
+//restoraniNis//
+
+
+
+//restoraniBeograd//
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('11', '11000', 'Ludarije', 'Venecijanska 5', '10', 'Srpska', 'Ne', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('12', '11000', 'Sasuke', 'Venecijanska 6', '10', 'Japanska', 'Ne', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('13', '11000', 'Gyros4U', 'Venecijanska 7', '10', 'Grcka', 'Ne', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('14', '11000', 'Ding Dong', 'Venecijanska 8', '10', 'Kineska', 'Ne', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('15', '11000', 'Ling Long', 'Venecijanska 9', '10', 'Kineska', 'Ne', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('16', '11000', 'La Amerika', 'Venecijanska 10', '10', 'Italijanska', 'Ne', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('17', '11000', 'Sombrero', 'Venecijanska 11', '10', 'Meksicka', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('18', '11000', 'Il Pleut', 'Venecijanska 12', '10', 'Francuska', 'Ne', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('19', '11000', 'Dve Krigle', 'Venecijanska 13', '10', 'Srpska', 'Ne', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('20', '11000', 'Krilca i Pivo', 'Venecijanska 14', '10', 'Srpska', 'Da', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('21', '11000', 'L'retard', 'Venecijanska 15', '10', 'Francuska', 'Ne', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('22', '11000', 'Kod Mileta', 'Venecijanska 16', '10', 'Srpska', 'Ne', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('23', '11000', 'Teta Maca', 'Venecijanska 17', '10', 'Srpska', 'Ne', 'Da');
+
+//restoraniBeograd//
+
+
+
+//restoraniNoviSad//
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('24', '12000', 'Project 72 Wine&Deli', 'Novosadska 5', '10', 'Medjunarodna', 'Da', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('25', '12000', 'Fish&Zelenis', 'Novosadska 6', '10', 'Mediteranska', 'Da', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('25', '12000', 'Cafe Veliki', 'Novosadska 7', '10', 'Evropska', 'Da', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('26', '12000', 'Toster Bar', 'Novosadska 8', '10', 'Americka', 'Da', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('27', '12000', 'Savoca Restoran i Picerija', 'Novosadska 9', '10', 'Italijanska', 'Da', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('28', '12000', 'alla Lanterna', 'Novosadska 67', '10', 'Italijanska', 'Da', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('29', '12000', 'Petrus Cafe Gallery Bar' 'Novosadska 16', '10', 'Evropska', 'Da', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('30', '12000', 'Aqua Doria', 'Novosadska 26', '10', 'Mediteranska', 'Da', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('31', '12000', 'The Camelot ', 'Novosadska 613', '10', 'Evropska', 'Da', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('32', '12000', 'Restoran Zak ', 'Novosadska 26', '10', 'Francuska', 'Da', 'Da');
+
+//restoraniNoviSad//
+
+
+//restoraniSubotica//
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('33', '13000', 'FABRIKA Burger Bar', 'Suboticka 30', '10', 'Americka', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('34', '13000', 'Boss', 'Suboticka 31', '10', 'Italijanska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('35', '13000', 'Stara Pizzeria', 'Suboticka 32', '10', 'Italijanska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('36', '13000', 'Bates', 'Suboticka 33', '10', 'Evropska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('37', '13000', 'Gostiona-Vendeglo Gurinovic', 'Suboticka 34', '10', 'Americka', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('38', '13000', 'Poslasticarnica Pelivan', 'Suboticka 35', '10', 'Srpska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('39', '13000', 'Renaissance', 'Suboticka 36', '10', 'Italijanska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('40', '13000', 'The Code', 'Suboticka 37', '10', 'Mediteranska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('41', '13000', 'Konoba Tinel', 'Suboticka 38', '10', 'Evropska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('42', '13000', 'Munchen - Bavarian Beer Garden', 'Suboticka 39', '10', 'Evropska', 'Ne', 'Ne');
+
+//restoraniSubotica//
+
+
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('43', '14000', 'Riblji Restoran Pecina', 'Uzicanska 50', '10', 'Mediteranska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('44', '14000', 'Moja Reka', 'Uzicanska 51', '10', 'Evropska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('45', '14000', 'Aleksandar', 'Uzicanska 52', '10', 'Evropska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('46', '14000', 'Vagone Ristorante', 'Uzicanska 53', '10', 'Italijanska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('47', '14000', 'Naša priča', 'Uzicanska 54', '10', 'Evropska', 'Da', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('48', '14000', 'Restoran sa prenoćištem Tabana', 'Uzicanska 55', '10', 'Grcka', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('49', '14000', 'Restoran Gold Fish', 'Uzicanska 56', '10', 'Mediteranska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('50', '14000', 'Nacionalna Kuca Bajo', 'Uzicanska 57', '10', 'Evropska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('51', '14000', 'Restoran PASTIR - Mačkat', 'Uzicanska 58', '10', 'Medjunarodna', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('52', '14000', 'ShiShu', 'Uzicanska 59', '10', 'Kineska', 'Ne', 'Da');
+
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('53', '15000', 'Sur 202 Plus', 'Negotinska 15', '10', 'Evropska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('54', '15000', 'S.O.S. Restoran', 'Negotinska 16', '10', 'Meksicka', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('55', '15000', 'Hajduk Veljkov Raj', 'Negotinska 17', '10', 'Srpska', 'Da', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('56', '15000', 'Pizzeria Castelo', 'Negotinska 18', '10', 'Italijanska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('57', '15000', 'Afrodita', 'Negotinska 19', '10', 'Srpska', 'Da', 'Ne');
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('58', '16000', 'Mali Raj', 'Jagodinska 25', '10', 'Srpska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('59', '16000', 'Restoran R Club', 'Jagodinska 26', '10', 'Italijanska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('60', '16000', 'Vivo Cafe Restaurant', 'Jagodinska 27', '10', 'Srpska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('61', '16000', 'Etno Konak', 'Jagodinska 28', '10', 'Srpska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('62', '16000', 'Cafe pizzeria Vetrenjača', 'Jagodinska 29', '10', 'Italijanska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('63', '16000', 'Wing Club Hotel', 'Jagodinska 30', '10', 'Italijanska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('64', '16000', 'Belicki Kej', 'Jagodinska 31', '10', 'Srpska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('65', '16000', 'Hill Hotel Pizzeria', 'Jagodinska 32', '10', 'Italijanska', 'Da', 'Ne');
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('66', '17000', 'Sandy', 'Cacanska 25', '10', 'Mediteranska', 'Ne', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('67', '17000', 'Splav Lanterna', 'Cacanska 26', '10', 'Evropska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('68', '17000', 'Restoran Petrovic', 'Cacanska 27', '10', 'Srpska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('69', '17000', 'Pizzeria Monaliza', 'Cacanska 28', '10', 'Italijanska', 'Da', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('70', '17000', 'Pizzeria 13', 'Cacanska 29', '10', 'Italijanska', 'Da', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('71', '17000', 'Nacionalna Kuca Brvnara', 'Cacanska 30', '10', 'Srpska', 'Ne', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('72', '17000', 'Santa Maria', 'Cacanska 31', '10', 'Mediteranska', 'Da', 'Ne');
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('73', '10000', 'Etno Restoran Brvnara', 'Kraljevacka 47', '10', 'Srpska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('74', '10000', 'Restaurant and Pizzeria Panorama', 'Kraljevacka 48', '10', 'Italijanska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('75', '10000', 'Mirage Authentic', 'Kraljevacka 49', '10', 'Mediteranska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('76', '10000', 'Caffe & Restoran Constantine', 'Kraljevacka 50', '10', 'Mediteranska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('77', '10000', 'Rafaello', 'Kraljevacka 51', '10', 'Italijanska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('78', '10000', 'Kafana kod Mira', 'Kraljevacka 52', '10', 'Srpska', 'Da', 'Ne');
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('79', '10500', 'Restaurant Mustang', 'Kragujevacka 19', '10', 'Evropska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('80', '10500', 'Hotel Zelengora', 'Kragujevacka 20', '10', 'Evropska', 'Da', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('81', '10500', 'Lovac Restoran', 'Kragujevacka 21', '10', 'Evropska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('82', '10500', 'Restaurant Panorama', 'Kragujevacka 22', '10', 'Italijanska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('83', '10500', 'Patisseries Srce', 'Kragujevacka 23', '10', 'Evropska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('84', '10500', 'Restaurant Vodenica', 'Kragujevacka 24', '10', 'Evropska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('85', '10500', 'Peron Pancakes', 'Kragujevacka 25', '10', 'Evropska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('86', '10500', 'Districs 034', 'Kragujevacka 26', '10', 'Medjunarodna', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('87', '10500', 'Restoran Kano', 'Kragujevacka 27', '10', 'Mediteranska', 'Ne', 'Ne');
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('88', '11500', 'Stari Bunar', 'Vranjanska 26', '10', 'Evropska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('89', '11500', 'Gradska Meana', 'Vranjanska 27', '10', 'Evropska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('90', '11500', 'Restoran Morava', 'Vranjanska 28', '10', 'Medjunarodna', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('91', '11500', 'Nana Bistro & Cafe', 'Vranjanska 29', '10', 'Italijanska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('92', '11500', 'Leon Food', 'Vranjanska 30', '10', 'Srpska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('93', '11500', 'Hobbit Kuca Vilenjaka', 'Vranjanska 31', '10', 'Srpska', 'Ne', 'Ne');
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('94', '12500', 'Etno Brvnara Gros', 'Leskovacka 14', '10', 'Srpska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('95', '12500', 'Restoran ABC', 'Leskovacka 15', '10', 'Srpska', 'Ne', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('96', '12500', 'Kompleks APOSTOLOVIĆ', 'Leskovacka 16', '10', 'Srpska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('97', '12500', 'Krnjicev Podrum', 'Leskovacka 17', '10', 'Medjunarodna', 'Ne', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('98', '12500', 'Restoran Zamak - Jug Bogdan', 'Leskovacka 18', '10', 'Italijanska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('99', '12500', 'Cap Cap', 'Leskovacka 19', '10', 'Mediteranska', 'Da', 'Da');
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('100', '13500', 'Caffe-Restoran Boomerang', 'Loznicka 1', '10', 'Evropska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('101', '13500', 'Kafana kod Pauna', 'Loznicka 2', '10', 'Srpska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('102', '13500', 'Srpska Kafana', 'Loznicka 3', '10', 'Srpska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('103', '13500', 'Drinski Konak Pustolov', 'Loznicka 4', '10', 'Srpska', 'Ne', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('104', '13500', 'Restoran Vuk Trsic', 'Loznicka 5', '10', 'Medjunarodna', 'Ne', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('105', '13500', 'Restoran PARK', 'Loznicka 6', '10', 'Medjunarodna', 'Ne', 'Ne');
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('106', '14500', 'La Piazza', 'Valjevska 2', '10', 'Italijanska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('107', '14500', 'Kafana Kod Bore', 'Valjevska 3', '10', 'Srpska', 'Ne', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('108', '14500', 'Usput', 'Valjevska 4', '10', 'Srpska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('109', '14500', 'Restoran Kuca Valjevo', 'Valjevska 5', '10', 'Srpska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('110', '14500', 'Hemingvej', 'Valjevska 6', '10', 'Evropska', 'Ne', 'Ne');
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('111', '15500', 'Etno Kuća Vilindar', 'Trstenicka 6', '10', 'Srpska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('112', '15500', 'Caffe MS', 'Trstenicka 7', '10', 'Medjunarodna', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('113', '15500', 'Tri Golubice', 'Trstenicka 8', '10', 'Evropska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('114', '15500', 'Dukat', 'Trstenicka 9', '10', 'Evropska', 'Ne', 'Ne');
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('115', '16500', 'Cruiser Brod Restoran', 'Cuprijska 50', '10', 'Evropska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('116', '16500', 'Gavra bar', 'Cuprijska 51', '10', 'Srpska', 'Ne', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('117', '16500', 'Stara Carsija', 'Cuprijska 52', '10', 'Srpska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('118', '16500', 'Apis', 'Cuprijska 53', '10', 'Srpska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('119', '16500', 'Kafana Na Brdu', 'Cuprijska 54', '10', 'Srpska', 'Ne', 'Da');
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('120', '17500', 'Papuli restaurant', 'Sentovska 15', '10', 'Medjunarodna', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('121', '17500', 'Etnogold', 'Sentovska 16', '10', 'Evropska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('122', '17500', 'Fantastico Restaurant Pub', 'Sentovska 17', '10', 'Evropska', 'Ne', 'Da');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('123', '17500', 'Gorstak 1971', 'Sentovska 18', '10', 'Srpska', 'Ne', 'Ne');
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('124', '9000', 'Pub Rivendell', 'Zajecarska 3', '10', 'Evropska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('125', '9000', 'Dva Brata', 'Zajecarska 4', '10', 'Evropska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('126', '9000', 'Restorante kod Mede', 'Zajecarska 5', '10', 'Srpska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('127', '9000', 'Beba Restaurant', 'Zajecarska 6', '10', 'Srpska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('128', '9000', 'Picerija Galerija', 'Zajecarska 7', '10', 'Italijanska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('129', '9000', 'Gostoprimnica', 'Zajecarska 8', '10', 'Srpska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('130', '9000', 'Palas', 'Zajecarska 9', '10', 'Medjunarodna', 'Da', 'Ne');
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('131', '8500', 'SP Resort Terme', 'Knjazevacka 7', '10', 'Medjunarodna', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('132', '8500', 'Srpska Kafana', 'Knjazevacka 8', '10', 'Srpska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('133', '8500', 'Meze', 'Knjazevacka 9', '10', 'Srpska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('134', '8500', 'Kod Mileta', 'Knjazevacka 10', '10', 'Srpska', 'Ne', 'Ne');
+
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('135', '9500', 'Kod Jonuza', 'Novopazarska 9', '10', 'Srpska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('136', '9500', 'Motel Ras - Restoran Pazariste', 'Novopazarska 10', '10', 'Medjunarodna', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('137', '9500', 'Emrovic raj', 'Novopazarska 11', '10', 'Srpska', 'Ne', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('138', '9500', 'Restoran Jovanje', 'Novopazarska 12', '10', 'Evropska', 'Da', 'Ne');
+insert into "Restoran" ( "restoranID", postanski, naziv, adresa, brojStolova, tipKuhinje, vegan, bezGlutena)  values ('139', '9500', 'Pizzeria Raffaello', 'Novopazarska 13', '10', 'Italijanska', 'Da', 'Ne');
+
+
+
+//stolovi//
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('1', '1', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('1', '2', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('1', '3', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('1', '4', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('1', '5', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('1', '6', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('1', '7', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('1', '8', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('1', '9', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('1', '10', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('2', '11', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('2', '12', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('2', '13', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('2', '14', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('2', '15', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('2', '16', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('2', '17', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('2', '18', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('2', '19', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('2', '20', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('3', '21', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('3', '22', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('3', '23', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('3', '24', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('3', '25', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('3', '26', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('3', '27', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('3', '28', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('3', '29', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('3', '30', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('4', '31', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('4', '32', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('4', '33', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('4', '34', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('4', '35', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('4', '36', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('4', '37', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('4', '38', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('4', '39', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('4', '40', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('5', '41', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('5', '42', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('5', '43', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('5', '44', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('5', '45', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('5', '46', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('5', '47', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('5', '48', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('5', '49', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('5', '50', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('6', '51', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('6', '52', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('6', '53', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('6', '54', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('6', '55', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('6', '56', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('6', '57', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('6', '58', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('6', '59', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('6', '60', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('7', '61', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('7', '62', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('7', '63', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('7', '64', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('7', '65', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('7', '66', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('7', '67', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('7', '68', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('7', '69', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('7', '70', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('8', '71', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('8', '72', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('8', '73', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('8', '74', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('8', '75', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('8', '76', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('8', '77', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('8', '78', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('8', '79', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('8', '80', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('9', '81', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('9', '82', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('9', '83', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('9', '84', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('9', '85', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('9', '86', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('9', '87', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('9', '88', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('9', '89', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('9', '90', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('10', '91', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('10', '92', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('10', '93', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('10', '94', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('10', '95', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('10', '96', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('10', '97', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('10', '98', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('10', '99', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('10', '100', '8');
+
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('11', '101', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('11', '102', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('11', '103', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('11', '104', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('11', '105', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('11', '106', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('11', '107', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('11', '108', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('11', '109', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('11', '110', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('12', '111', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('12', '112', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('12', '113', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('12', '114', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('12', '115', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('12', '116', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('12', '117', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('12', '118', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('12', '119', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('12', '120', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('13', '121', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('13', '122', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('13', '123', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('13', '124', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('13', '125', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('13', '126', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('13', '127', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('13', '128', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('13', '129', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('13', '130', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('14', '131', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('14', '132', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('14', '133', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('14', '134', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('14', '135', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('14', '136', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('14', '137', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('14', '138', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('14', '139', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('14', '140', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('15', '141', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('15', '142', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('15', '143', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('15', '144', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('15', '145', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('15', '146', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('15', '147', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('15', '148', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('15', '149', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('15', '150', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('16', '151', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('16', '152', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('16', '153', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('16', '154', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('16', '155', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('16', '156', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('16', '157', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('16', '158', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('16', '159', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('16', '160', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('17', '161', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('17', '162', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('17', '163', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('17', '164', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('17', '165', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('17', '166', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('17', '167', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('17', '168', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('17', '169', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('17', '170', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('18', '171', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('18', '172', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('18', '173', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('18', '174', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('18', '175', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('18', '176', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('18', '177', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('18', '178', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('18', '179', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('18', '180', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('19', '181', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('19', '182', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('19', '183', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('19', '184', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('19', '185', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('19', '186', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('19', '187', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('19', '188', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('19', '189', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('19', '190', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('20', '191', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('20', '192', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('20', '193', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('20', '194', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('20', '195', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('20', '196', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('20', '197', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('20', '198', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('20', '199', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('20', '200', '8');
+
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('21', '201', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('21', '202', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('21', '203', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('21', '204', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('21', '205', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('21', '206', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('21', '207', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('21', '208', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('21', '209', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('21', '210', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('22', '211', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('22', '212', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('22', '213', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('22', '214', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('22', '215', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('22', '216', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('22', '217', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('22', '218', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('22', '219', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('22', '220', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('23', '221', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('23', '222', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('23', '223', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('23', '224', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('23', '225', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('23', '226', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('23', '227', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('23', '228', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('23', '229', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('23', '230', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('24', '231', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('24', '232', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('24', '233', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('24', '234', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('24', '235', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('24', '236', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('24', '237', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('24', '238', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('24', '239', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('24', '240', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('25', '241', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('25', '242', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('25', '243', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('25', '244', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('25', '245', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('25', '246', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('25', '247', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('25', '248', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('25', '249', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('25', '250', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('26', '251', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('26', '252', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('26', '253', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('26', '254', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('26', '255', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('26', '256', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('26', '257', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('26', '258', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('26', '259', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('26', '260', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('27', '261', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('27', '262', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('27', '263', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('27', '264', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('27', '265', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('27', '266', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('27', '267', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('27', '268', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('27', '269', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('27', '270', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('28', '271', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('28', '272', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('28', '273', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('28', '274', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('28', '275', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('28', '276', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('28', '277', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('28', '278', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('28', '279', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('28', '280', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('29', '281', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('29', '282', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('29', '283', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('29', '284', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('29', '285', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('29', '286', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('29', '287', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('29', '288', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('29', '289', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('29', '290', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('30', '291', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('30', '292', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('30', '293', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('30', '294', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('30', '295', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('30', '296', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('30', '297', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('30', '298', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('30', '299', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('30', '300', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('31', '301', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('31', '302', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('31', '303', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('31', '304', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('31', '305', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('31', '306', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('31', '307', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('31', '308', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('31', '309', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('31', '310', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('32', '311', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('32', '312', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('32', '313', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('32', '314', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('32', '315', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('32', '316', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('32', '317', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('32', '318', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('32', '319', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('32', '320', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('33', '321', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('33', '322', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('33', '323', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('33', '324', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('33', '325', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('33', '326', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('33', '327', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('33', '328', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('33', '329', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('33', '330', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('34', '331', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('34', '332', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('34', '333', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('34', '334', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('34', '335', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('34', '336', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('34', '337', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('34', '338', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('34', '339', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('34', '340', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('35', '341', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('35', '342', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('35', '343', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('35', '344', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('35', '345', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('35', '346', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('35', '347', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('35', '348', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('35', '349', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('35', '350', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('36', '351', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('36', '352', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('36', '353', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('36', '354', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('36', '355', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('36', '356', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('36', '357', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('36', '358', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('36', '359', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('36', '360', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('37', '361', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('37', '362', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('37', '363', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('37', '364', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('37', '365', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('37', '366', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('37', '367', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('37', '368', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('37', '369', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('37', '370', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('38', '371', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('38', '372', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('38', '373', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('38', '374', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('38', '375', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('38', '376', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('38', '377', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('38', '378', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('38', '379', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('38', '380', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('39', '381', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('39', '382', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('39', '383', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('39', '384', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('39', '385', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('39', '386', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('39', '387', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('39', '388', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('39', '389', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('39', '390', '8');
+
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('40', '391', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('40', '392', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('40', '393', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('40', '394', '6');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('40', '395', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('40', '396', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('40', '397', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('40', '398', '4');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('40', '399', '8');
+insert into "Sto" ("restoranID", "stoID", kapacitet)  values ('40', '400', '8');
+
+
+
+//jela//
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('1', '1', 'Piletina na kineski nacin','belo meso, kupus, praziluk, pecurke, sargarepa, soja sos', '500');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('1', '2', 'Przeni pirinac sa spanacem i pecurkama','pirinac, luk, pecurke, spanac, soja sos, ulje, djumbir', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('1', '3', 'Raznjic sa tofuom','tofu, pecurke, cherry paradajz, soja sos, zacini, pirincano vino(sake)', '550');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('1', '4', 'Przena krilca na kineski nacin','pileca krilca (15 kom.), sake, bujon, belance, soja sos', '600');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('1', '5', 'Salata od kineskog kupusa i kukuruza','kineski kupus, sargarepa, kukuruz, krastavac', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('1', '6', 'Slatko-kisele cufte','mleveno meso, prezle, jaje, jabukovo sirce, kecap, kukuruzni skrob, sos', '500');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('1', '7', 'Pohovane banane sa pistacima','banana, pistaci, kisela pavlaka, slatko od tresanja, vanila', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('2', '8', 'Fahitas sa piletinom i gvakamolijem','pilece grudi, paradajz, paprika, luk, avokado, zacini', '500');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('2', '9', 'Cukini encilade','tikvice, mleveno meso, beli i crni luk, cili, cedar sir, kumin, kisela pavlaka', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('2', '10', 'Kesarito','tortilja, pirinac, mleveno meso, cedar sir, aleva paprika, kisela pavlaka, biber', '450');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('2', '11', 'Cili pasulj na meksicki nacin','luk, cili, kumin, paradajz, luk, pasulj', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('2', '12', 'Integralni takos sa crvenim pasuljem','tortilje, avokado, crveni pasulj, paradajz, zelena salata, masline', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('2', '13', 'Nacos sa gvakamole sosom i pavlakom','nacosi, slag, kackavalj, ljute paprike, avokado', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('2', '14', 'Cimicanga','pilece meso, tortilja, luk, kackavalj, origano, cili', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('3', '15', 'Grcke snicle','svinjsko meso, paprike, maslac, paradajz pire, zacini', '500');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('3', '16', 'Keftedakija','telece mleveno meso, tikvice, beli i crni luk, jaja, prezle', '600');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('3', '17', 'Grcki kolac sa susamom','susam, bademi, orasi, secer u prahu', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('3', '18', 'Kalamari','lignje, jaje, ulje, limun, sargarepa', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('3', '19', 'Karpaco','hobotnica, ceri paradajz, beli luk, bosiljak, krompir, belo vino', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('3', '20', 'Pikantne skoljke','skoljke, ovciji sir, beli luk, paradajz, uzo, ljute paprike', '500');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('3', '21', 'Peceni patlidzan','patlidzan, beli luk, ceri paradajz, sir, bosiljak, zacini', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('4', '22', 'Rikota kolac','crna cokolada, rikota sir, maslac, secer u prahu', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('4', '23', 'Kapreze','slani tart, pesto djenoveze, mocarela, paradajz, bosiljak', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('4', '24', 'Sfoljatela','lisnato testo, dzem od malina, krem sir, secer u prahu', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('4', '25', 'Salata mocarela','zeleno povrce, dimljena mocarela, suseni paradajz, beli luk, kapar', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('4', '26', 'Spageti bri','bri sir, testenina, slanina, parmezan, crni luk', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('4', '27', 'Sartu di riso','arborio pirinac, sargarepa, paradajz, celer, parmezan, mocarela, prezle', '500');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('4', '28', 'Espresso dolce','maskarpone sir, slatka pavlaka, piskote, espreso kafa, amareto liker', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('5', '29', 'Seljacka pita','crni luk, slanina, pavlaka, sir', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('5', '30', 'Kuglice od blitve','blitva, kackavalj, jaja, beli luk, kiseli krastavcici, majonez', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('5', '31', 'Salvatore','oblande, suvo grozdje, orasi, suve smokve', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('5', '32', 'Leskovacka pljeskavica','telece i svinjsko mleveno meso, ljute paprike, luk, maslac', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('5', '33', 'Pohovani vrganji','vrganji, hleb, jaja , belo vino', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('5', '34', 'Srpska kobasica','svinjsko meso, ljuta aleva paprika, slanina, kumin', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('5', '35', 'Domaca musaka','pilece dzigerice, sargarepa, luk, paprike, pecurke, cubar', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('6', '36', 'Fahitas sa piletinom i gvakamolijem','pilece grudi, paradajz, paprika, luk, avokado, zacini', '500');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('6', '37', 'Cukini encilade','tikvice, mleveno meso, beli i crni luk, cili, cedar sir, kumin, kisela pavlaka', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('6', '38', 'Kesarito','tortilja, pirinac, mleveno meso, cedar sir, aleva paprika, kisela pavlaka, biber', '450');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('6', '39', 'Cili pasulj na meksicki nacin','luk, cili, kumin, paradajz, luk, pasulj', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('6', '40', 'Integralni takos sa crvenim pasuljem','tortilje, avokado, crveni pasulj, paradajz, zelena salata, masline', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('6', '41', 'Nacos sa gvakamole sosom i pavlakom','nacosi, slag, kackavalj, ljute paprike, avokado', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('6', '42', 'Cimicanga','pilece meso, tortilja, luk, kackavalj, origano, cili', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('7', '43', 'Seljacka pita','crni luk, slanina, pavlaka, sir', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('7', '44', 'Kuglice od blitve','blitva, kackavalj, jaja, beli luk, kiseli krastavcici, majonez', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('7', '45', 'Salvatore','oblande, suvo grozdje, orasi, suve smokve', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('7', '46', 'Leskovacka pljeskavica','telece i svinjsko mleveno meso, ljute paprike, luk, maslac', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('7', '47', 'Pohovani vrganji','vrganji, hleb, jaja , belo vino', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('7', '48', 'Srpska kobasica','svinjsko meso, ljuta aleva paprika, slanina, kumin', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('7', '49', 'Domaca musaka','pilece dzigerice, sargarepa, luk, paprike, pecurke, cubar', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('8', '50', 'Seljacka pita','crni luk, slanina, pavlaka, sir', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('8', '51', 'Kuglice od blitve','blitva, kackavalj, jaja, beli luk, kiseli krastavcici, majonez', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('8', '52', 'Salvatore','oblande, suvo grozdje, orasi, suve smokve', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('8', '53', 'Leskovacka pljeskavica','telece i svinjsko mleveno meso, ljute paprike, luk, maslac', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('8', '54', 'Pohovani vrganji','vrganji, hleb, jaja , belo vino', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('8', '55', 'Srpska kobasica','svinjsko meso, ljuta aleva paprika, slanina, kumin', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('8', '56', 'Domaca musaka','pilece dzigerice, sargarepa, luk, paprike, pecurke, cubar', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('9', '57', 'Seljacka pita','crni luk, slanina, pavlaka, sir', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('9', '58', 'Kuglice od blitve','blitva, kackavalj, jaja, beli luk, kiseli krastavcici, majonez', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('9', '59', 'Salvatore','oblande, suvo grozdje, orasi, suve smokve', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('9', '60', 'Leskovacka pljeskavica','telece i svinjsko mleveno meso, ljute paprike, luk, maslac', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('9', '61', 'Pohovani vrganji','vrganji, hleb, jaja , belo vino', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('9', '62', 'Srpska kobasica','svinjsko meso, ljuta aleva paprika, slanina, kumin', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('9', '63', 'Domaca musaka','pilece dzigerice, sargarepa, luk, paprike, pecurke, cubar', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('10', '64', 'Brza terijaki krilca','pileca krilca, brasno, zacini, soja sos, smedji secer', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('10', '65', 'Povrce tempura','sargarepa, brokoli, karfiol, paskanat, kurkuma, aleva paprika,', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('10', '66', 'Asara Gohan','japanske skoljke, pirinac, mirin, soja sos, luk, miso', '500');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('10', '67', 'Sushi hosomaki','pirinac, losos, krastavac, surimi stapici, topljeni sir', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('10', '68', 'Jakitori','piletina, soja sos, luk, votka, aleva paprika', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('10', '69', 'Japanski kuglof','jaja, secer, sveze mleko, med, brasno', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('10', '70', 'Japanski omlet - dashimaki tamago','jaja, riblji bujon, sake, mirin, secer', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('11', '71', 'Seljacka pita','crni luk, slanina, pavlaka, sir', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('11', '72', 'Kuglice od blitve','blitva, kackavalj, jaja, beli luk, kiseli krastavcici, majonez', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('11', '73', 'Salvatore','oblande, suvo grozdje, orasi, suve smokve', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('11', '74', 'Leskovacka pljeskavica','telece i svinjsko mleveno meso, ljute paprike, luk, maslac', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('11', '75', 'Pohovani vrganji','vrganji, hleb, jaja , belo vino', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('11', '76', 'Srpska kobasica','svinjsko meso, ljuta aleva paprika, slanina, kumin', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('11', '77', 'Domaca musaka','pilece dzigerice, sargarepa, luk, paprike, pecurke, cubar', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('12', '78', 'Brza terijaki krilca','pileca krilca, brasno, zacini, soja sos, smedji secer', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('12', '79', 'Povrce tempura','sargarepa, brokoli, karfiol, paskanat, kurkuma, aleva paprika,', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('12', '80', 'Asara Gohan','japanske skoljke, pirinac, mirin, soja sos, luk, miso', '500');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('12', '81', 'Sushi hosomaki','pirinac, losos, krastavac, surimi stapici, topljeni sir', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('12', '82', 'Jakitori','piletina, soja sos, luk, votka, aleva paprika', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('12', '83', 'Japanski kuglof','jaja, secer, sveze mleko, med, brasno', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('12', '84', 'Japanski omlet - dashimaki tamago','jaja, riblji bujon, sake, mirin, secer', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('13', '85', 'Grcke snicle','svinjsko meso, paprike, maslac, paradajz pire, zacini', '500');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('13', '86', 'Keftedakija','telece mleveno meso, tikvice, beli i crni luk, jaja, prezle', '600');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('13', '87', 'Grcki kolac sa susamom','susam, bademi, orasi, secer u prahu', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('13', '88', 'Kalamari','lignje, jaje, ulje, limun, sargarepa', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('13', '89', 'Karpaco','hobotnica, ceri paradajz, beli luk, bosiljak, krompir, belo vino', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('13', '90', 'Pikantne skoljke','skoljke, ovciji sir, beli luk, paradajz, uzo, ljute paprike', '500');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('13', '91', 'Peceni patlidzan','patlidzan, beli luk, ceri paradajz, sir, bosiljak, zacini', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('14', '92', 'Piletina na kineski nacin','belo meso, kupus, praziluk, pecurke, sargarepa, soja sos', '500');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('14', '93', 'Przeni pirinac sa spanacem i pecurkama','pirinac, luk, pecurke, spanac, soja sos, ulje, djumbir', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('14', '94', 'Raznjic sa tofuom','tofu, pecurke, cherry paradajz, soja sos, zacini, pirincano vino(sake)', '550');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('14', '95', 'Przena krilca na kineski nacin','pileca krilca (15 kom.), sake, bujon, belance, soja sos', '600');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('14', '96', 'Salata od kineskog kupusa i kukuruza','kineski kupus, sargarepa, kukuruz, krastavac', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('14', '97', 'Slatko-kisele cufte','mleveno meso, prezle, jaje, jabukovo sirce, kecap, kukuruzni skrob, sos', '500');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('14', '98', 'Pohovane banane sa pistacima','banana, pistaci, kisela pavlaka, slatko od tresanja, vanila', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('15', '99', 'Piletina na kineski nacin','belo meso, kupus, praziluk, pecurke, sargarepa, soja sos', '500');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('15', '100', 'Przeni pirinac sa spanacem i pecurkama','pirinac, luk, pecurke, spanac, soja sos, ulje, djumbir', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('15', '101', 'Raznjic sa tofuom','tofu, pecurke, cherry paradajz, soja sos, zacini, pirincano vino(sake)', '550');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('15', '102', 'Przena krilca na kineski nacin','pileca krilca (15 kom.), sake, bujon, belance, soja sos', '600');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('15', '103', 'Salata od kineskog kupusa i kukuruza','kineski kupus, sargarepa, kukuruz, krastavac', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('15', '104', 'Slatko-kisele cufte','mleveno meso, prezle, jaje, jabukovo sirce, kecap, kukuruzni skrob, sos', '500');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('15', '105', 'Pohovane banane sa pistacima','banana, pistaci, kisela pavlaka, slatko od tresanja, vanila', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('16', '106', 'Rikota kolac','crna cokolada, rikota sir, maslac, secer u prahu', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('16', '107', 'Kapreze','slani tart, pesto djenoveze, mocarela, paradajz, bosiljak', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('16', '108', 'Sfoljatela','lisnato testo, dzem od malina, krem sir, secer u prahu', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('16', '109', 'Salata mocarela','zeleno povrce, dimljena mocarela, suseni paradajz, beli luk, kapar', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('16', '110', 'Spageti bri','bri sir, testenina, slanina, parmezan, crni luk', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('16', '111', 'Sartu di riso','arborio pirinac, sargarepa, paradajz, celer, parmezan, mocarela, prezle', '500');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('16', '112', 'Espresso dolce','maskarpone sir, slatka pavlaka, piskote, espreso kafa, amareto liker', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('17', '113', 'Fahitas sa piletinom i gvakamolijem','pilece grudi, paradajz, paprika, luk, avokado, zacini', '500');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('17', '114', 'Cukini encilade','tikvice, mleveno meso, beli i crni luk, cili, cedar sir, kumin, kisela pavlaka', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('17', '115', 'Kesarito','tortilja, pirinac, mleveno meso, cedar sir, aleva paprika, kisela pavlaka, biber', '450');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('17', '116', 'Cili pasulj na meksicki nacin','luk, cili, kumin, paradajz, luk, pasulj', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('17', '117', 'Integralni takos sa crvenim pasuljem','tortilje, avokado, crveni pasulj, paradajz, zelena salata, masline', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('17', '118', 'Nacos sa gvakamole sosom i pavlakom','nacosi, slag, kackavalj, ljute paprike, avokado', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('17', '119', 'Cimicanga','pilece meso, tortilja, luk, kackavalj, origano, cili', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('18', '120', 'Paciji magre ','pacije grudi, beli luk, ruzmarin, med, bujon, crveno vino', '500');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('18', '121', 'Sufle od bundeve','bundeva, pomorandza, djumbir, med, cimet', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('18', '122', 'Ratatuj','pogaca, luk, tikvice, patlidzan, paradajz, paprika, krompir, ruzmarin', '450');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('18', '123', 'Kis sa tikvicama','tikvice, luk, stilton, ceri paradajz, pavlaka, jaja', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('18', '124', 'Kamamber kejk','kamamber, jagode, med, ruzmarin, votka', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('18', '125', 'Rolat od spanaca','spanac, pecurke, kukuruz, paprika, jaja, mladi luk', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('18', '126', 'Francuska salata','cvekla, koziji sir, salata ajsberg, senf, maslinovo ulje, zacini', '300');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('19', '127', 'Seljacka pita','crni luk, slanina, pavlaka, sir', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('19', '128', 'Kuglice od blitve','blitva, kackavalj, jaja, beli luk, kiseli krastavcici, majonez', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('19', '129', 'Salvatore','oblande, suvo grozdje, orasi, suve smokve', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('19', '130', 'Leskovacka pljeskavica','telece i svinjsko mleveno meso, ljute paprike, luk, maslac', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('19', '131', 'Pohovani vrganji','vrganji, hleb, jaja , belo vino', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('19', '132', 'Srpska kobasica','svinjsko meso, ljuta aleva paprika, slanina, kumin', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('19', '133', 'Domaca musaka','pilece dzigerice, sargarepa, luk, paprike, pecurke, cubar', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('20', '134', 'Seljacka pita','crni luk, slanina, pavlaka, sir', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('20', '135', 'Kuglice od blitve','blitva, kackavalj, jaja, beli luk, kiseli krastavcici, majonez', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('20', '136', 'Salvatore','oblande, suvo grozdje, orasi, suve smokve', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('20', '137', 'Leskovacka pljeskavica','telece i svinjsko mleveno meso, ljute paprike, luk, maslac', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('20', '138', 'Pohovani vrganji','vrganji, hleb, jaja , belo vino', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('20', '139', 'Srpska kobasica','svinjsko meso, ljuta aleva paprika, slanina, kumin', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('20', '140', 'Domaca musaka','pilece dzigerice, sargarepa, luk, paprike, pecurke, cubar', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('21', '141', 'Paciji magre ','pacije grudi, beli luk, ruzmarin, med, bujon, crveno vino', '500');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('21', '142', 'Sufle od bundeve','bundeva, pomorandza, djumbir, med, cimet', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('21', '143', 'Ratatuj','pogaca, luk, tikvice, patlidzan, paradajz, paprika, krompir, ruzmarin', '450');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('21', '144', 'Kis sa tikvicama','tikvice, luk, stilton, ceri paradajz, pavlaka, jaja', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('21', '145', 'Kamamber kejk','kamamber, jagode, med, ruzmarin, votka', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('21', '146', 'Rolat od spanaca','spanac, pecurke, kukuruz, paprika, jaja, mladi luk', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('21', '147', 'Francuska salata','cvekla, koziji sir, salata ajsberg, senf, maslinovo ulje, zacini', '300');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('22', '148', 'Seljacka pita','crni luk, slanina, pavlaka, sir', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('22', '149', 'Kuglice od blitve','blitva, kackavalj, jaja, beli luk, kiseli krastavcici, majonez', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('22', '150', 'Salvatore','oblande, suvo grozdje, orasi, suve smokve', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('22', '151', 'Leskovacka pljeskavica','telece i svinjsko mleveno meso, ljute paprike, luk, maslac', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('22', '152', 'Pohovani vrganji','vrganji, hleb, jaja , belo vino', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('22', '153', 'Srpska kobasica','svinjsko meso, ljuta aleva paprika, slanina, kumin', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('22', '154', 'Domaca musaka','pilece dzigerice, sargarepa, luk, paprike, pecurke, cubar', '400');
+
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('23', '155', 'Seljacka pita','crni luk, slanina, pavlaka, sir', '300');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('23', '156', 'Kuglice od blitve','blitva, kackavalj, jaja, beli luk, kiseli krastavcici, majonez', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('23', '157', 'Salvatore','oblande, suvo grozdje, orasi, suve smokve', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('23', '158', 'Leskovacka pljeskavica','telece i svinjsko mleveno meso, ljute paprike, luk, maslac', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('23', '159', 'Pohovani vrganji','vrganji, hleb, jaja , belo vino', '350');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('23', '160', 'Srpska kobasica','svinjsko meso, ljuta aleva paprika, slanina, kumin', '400');
+insert into "Jelo" ( "restoranID", "jeloID", naziv, sastojci, cena)  values ('23', '161', 'Domaca musaka','pilece dzigerice, sargarepa, luk, paprike, pecurke, cubar', '400');
